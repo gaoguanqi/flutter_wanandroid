@@ -43,7 +43,12 @@ abstract class BaseWidgetState<T extends BaseWidget> extends State<T>
       appBar: _attachBaseAppBar(),
       body: Container(
         child: Stack(
-          children: <Widget>[],
+          children: <Widget>[
+            _attachBaseContentWidget(context),
+            _attachBaseErrorWidget(),
+            _attachBaseLoadingWidget(),
+            _attachBaseEmptyWidget(),
+          ],
         ),
       ),
       floatingActionButton: fabWidget(),

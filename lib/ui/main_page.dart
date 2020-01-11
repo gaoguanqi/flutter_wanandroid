@@ -30,10 +30,10 @@ class _MainPageState extends State<MainPage>
   // tabs view
   var pages = <Widget>[
     HomePage(),
-    Text('2'),
-    Text('3'),
-    Text('4'),
-    Text('5'),
+    HomePage(),
+    HomePage(),
+    HomePage(),
+    HomePage(),
   ];
 
   //flutter tab切换页面防止重置

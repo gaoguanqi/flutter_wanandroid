@@ -31,8 +31,8 @@ class ApiService {
 
   ///获取首页轮播图数据
   void getBannerList(Function callback) async{
-    dio.get(Apis.HOME_BANNER).then((respone){
-      callback(BannerModel.fromJson(respone.data));
+    dio.get(Apis.HOME_BANNER).then((response){
+      callback(BannerModel.fromJson(response.data));
     });
   }
 
@@ -45,9 +45,28 @@ class ApiService {
     });
   }
 
+  //获取首页文章数据
   void getArticleList(Function callback,Function errorCallback,int _page) async{
     dio.get(Apis.HOME_ARTICLE_LIST + '/$_page/json').then((response){
       callback(ArticleModel.fromJson(response.data));
+    }).catchError((e){
+      errorCallback(e);
+    });
+  }
+
+  //取消收藏
+  void cancleCollection(Function callback,Function errorCallback,int _id) async{
+      dio.post(Apis.CANCEL_COLLECTION + '/$_id/json').then((response){
+        callback(BaseModel.fromJson(response.data));
+      }).catchError((e){
+        errorCallback(e);
+      });
+  }
+
+  //新增收藏（收藏站内文章）
+  void addCollcetion(Function callbacn,Function errorCallback,int _id) async{
+    dio.post(Apis.ADD_COLLECTION + '/$_id/json').then((response){
+      callbacn(BaseModel.fromJson(response.data));
     }).catchError((e){
       errorCallback(e);
     });
