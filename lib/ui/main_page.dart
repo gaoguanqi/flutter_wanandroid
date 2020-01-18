@@ -3,6 +3,8 @@ import 'package:flutter_wanandroid/ui/drawer_page.dart';
 import 'package:flutter_wanandroid/ui/home_page.dart';
 import 'package:flutter_wanandroid/utils/utils.dart';
 
+import 'square_page.dart';
+
 /**
  * 首页
  */
@@ -30,7 +32,7 @@ class _MainPageState extends State<MainPage>
   // tabs view
   var pages = <Widget>[
     HomePage(),
-    HomePage(),
+    SquarePage(),
     HomePage(),
     HomePage(),
     HomePage(),
