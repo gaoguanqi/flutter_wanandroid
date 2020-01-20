@@ -4,6 +4,7 @@ import 'package:flutter_wanandroid/ui/home_page.dart';
 import 'package:flutter_wanandroid/utils/utils.dart';
 
 import 'square_page.dart';
+import 'wechat.page.dart';
 
 /**
  * 首页
@@ -33,7 +34,7 @@ class _MainPageState extends State<MainPage>
   var pages = <Widget>[
     HomePage(),
     SquarePage(),
-    HomePage(),
+    WeChatPage(),
     HomePage(),
     HomePage(),
   ];
